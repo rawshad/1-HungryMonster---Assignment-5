@@ -1,0 +1,25 @@
+.navigation-link {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    color: #383838;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.input-button {
+    background-color: #F06C4E;
+    color: #FFFFFF;
+}
+
+.food-caption {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 23px;
+    color: #252525;
+}
