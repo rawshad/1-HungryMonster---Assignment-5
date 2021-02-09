@@ -23,3 +23,7 @@
     line-height: 23px;
     color: #252525;
 }
+
+#food-container {
+    cursor: pointer;
+}
