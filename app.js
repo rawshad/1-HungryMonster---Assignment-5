@@ -1,7 +1,9 @@
+// Code Writing with ES6
+
+//Data Fetching with Search Data
 const searchFood = () => {
     const searchText = document.getElementById("search-food").value;
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
-    // console.log(url);
     //load data
     fetch(url)
     .then(res => res.json())
@@ -9,15 +11,9 @@ const searchFood = () => {
     .catch(error => errorHandler('OOps! No Food Found.'))
 }
 
+//After search show the food item
 const displayFood = foodItem => {
     foodItem.forEach(items => {
-        // console.log(items);
-        //Show data with list items
-        // const foodContainer = document.getElementById("food-container");
-        // const li = document.createElement("li");
-        // li.innerText = items.strMeal;
-        // foodContainer.appendChild(li);
-        // console.log(items.strMeal);
         const foodContainer = document.getElementById("food-container");
         const foodDiv = document.createElement('div');
         foodDiv.className = 'col-md-3';
@@ -31,8 +27,9 @@ const displayFood = foodItem => {
     })
 }
 
+//Click on item then show details
+//No use of buttons
 const foodDetails = (thumbnail, foodName, ing1, ing2, ing3, ing4, ing5, ing6) => {
-    // console.log(foodName, ing1, ing2, ing3, ing4, ing5, ing6);
     const ingredientCard = document.getElementById("ingredients-card");
     ingredientCard.innerHTML =`
             <img src="${thumbnail}" class="card-img-top" alt="...">
@@ -51,6 +48,7 @@ const foodDetails = (thumbnail, foodName, ing1, ing2, ing3, ing4, ing5, ing6) =>
     `
 }
 
+//Error Handler
 const errorHandler = (error) => {
     const errorMessage = document.getElementById("error-message");
     errorMessage.innerText = error;
