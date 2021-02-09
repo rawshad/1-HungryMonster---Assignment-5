@@ -6,6 +6,7 @@ const searchFood = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayFood(data.meals))
+    .catch(error => errorHandler('OOps! No Food Found.'))
 }
 
 const displayFood = foodItem => {
@@ -48,4 +49,9 @@ const foodDetails = (thumbnail, foodName, ing1, ing2, ing3, ing4, ing5, ing6) =>
                 </ul>
             </div>
     `
+}
+
+const errorHandler = (error) => {
+    const errorMessage = document.getElementById("error-message");
+    errorMessage.innerText = error;
 }
